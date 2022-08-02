@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class class1 {
 
-    public static void TestSeconedResults() throws InterruptedException{
+    public static void TestSeconedResults(){
     	System.setProperty("webdriver.chrome.driver",
                 "C:\\chrome\\chromedriver_win32\\chromedriver.exe");
 
@@ -17,16 +17,15 @@ public class class1 {
 		WebElement search = driver.findElement(By.name("q"));
 		search.sendKeys("Selenium Tutorial");
 		search.submit();
-		driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[1]/div[10]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]/h3[1]/span[1]")).click();		
+        driver.findElement(By.xpath("(//a/h3/span)[2]")).click();
 		String url_check=driver.getCurrentUrl();
 	      
 	    org.testng.Assert.assertEquals(url_check, "https://www.javatpoint.com/selenium-tutorial");		
         System.out.println("Success :"+driver.getCurrentUrl());
-	    Thread.sleep(3000);
 		driver.close();
     	}
     
-    public static void TestThirdResults() throws InterruptedException{
+    public static void TestThirdResults()  {
     	System.setProperty("webdriver.chrome.driver",
                 "C:\\chrome\\chromedriver_win32\\chromedriver.exe");
 
@@ -36,12 +35,11 @@ public class class1 {
 		WebElement search = driver.findElement(By.name("q"));
 		search.sendKeys("Selenium Tutorial");
 		search.submit();
-		driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[1]/div[10]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/a[1]/h3[1]/span[1]")).click();		
+        driver.findElement(By.xpath("(//a/h3/span)[3]")).click();
 		String url_check=driver.getCurrentUrl();
 	      
 	    org.testng.Assert.assertEquals(url_check, "https://www.tutorialspoint.com/selenium/index.htm");		
         System.out.println("Success :"+driver.getCurrentUrl());
-	    Thread.sleep(3000);
 		driver.close();
     	}
 }
