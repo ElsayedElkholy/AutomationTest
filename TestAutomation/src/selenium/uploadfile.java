@@ -14,10 +14,10 @@ public class uploadfile {
         uploadElement.sendKeys("E:\\7.jpg");
         driver.findElement(By.id("file-submit")).click();
         
-        String uploaded_message=driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/h3[1]")).getText();
+        String uploaded_message=driver.findElement(By.xpath("(//body/div/div/div/h3)[1]")).getText();
       
         org.testng.Assert.assertEquals(uploaded_message, "File Uploaded!");
-        
+        System.out.println(uploaded_message);   ;     
         Thread.sleep(3000);
 		driver.quit();
 
