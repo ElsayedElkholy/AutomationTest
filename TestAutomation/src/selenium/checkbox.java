@@ -1,6 +1,9 @@
 package selenium;
+import java.util.List;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class checkbox {
 
@@ -9,11 +12,15 @@ public class checkbox {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        driver.findElement(By.id("checkboxes"));
-        driver.findElement(By.xpath("//body/div[2]/div[1]/div[1]/form[1]/input[1]")).click();
-        boolean Checked= driver.findElement(By.xpath("//body/div[2]/div[1]/div[1]/form[1]/input[1]")).isSelected();
+        //driver.findElement(By.xpath("(//body/div/div/div/form/input)[1]")).click();
+        //boolean Checked1= driver.findElement(By.xpath("(//body/div/div/div/form/input)[1]")).isSelected();
+        //boolean Checked2= driver.findElement(By.xpath("(//body/div/div/div/form/input)[2]")).isSelected();
+        List<WebElement> checkboxes = driver.findElements(By.xpath("//body/div/div/div/form/input"));
+        checkboxes.get(0).click();
+        boolean Checked1= checkboxes.get(0).isSelected();
+        boolean Checked2= checkboxes.get(1).isSelected();
 
-        if (Checked == true) {
+        if (Checked1 == true && Checked2 == true) {
         System.out.println("Success");
         }
         else
