@@ -30,9 +30,8 @@ public class ExcelTest {
 		
 		ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-popup-blocking");
-        
         driver = new ChromeDriver(options);
-       
+        driver.manage().deleteAllCookies();
 
 	}
 	@AfterMethod

@@ -1,4 +1,5 @@
 package selenium;
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.*;
@@ -31,5 +32,6 @@ public class checkbox {
 		Thread.sleep(3000);
         driver.quit();
 	}
+	
 
 }
